@@ -818,7 +818,12 @@ export default function Home() {
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h4 className="text-xl font-bold text-white mb-1">Developer</h4>
-                      <p className="text-emerald-400 font-semibold">CampusMart</p>
+                      <a href="https://www.campusmart.store/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
+                        <span className="text-emerald-400 font-semibold">CampusMart</span>
+                        <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
                       <p className="text-sm text-gray-400">August 2025 – Present</p>
                     </div>
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center border border-emerald-500/30">
