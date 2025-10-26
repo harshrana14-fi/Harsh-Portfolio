@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui";
 import {SiHtml5,SiJavascript,SiTypescript,SiPython,SiReact,SiNextdotjs,SiMongodb,SiAndroid,SiDart,SiFigma,SiFirebase,SiGit,SiCplusplus,SiExpress,SiRuby,SiRubyonrails,SiSocketdotio,SiNumpy,SiDatabricks,SiPostman,SiAbbott} from "react-icons/si";
 import { FaAws, FaJava} from "react-icons/fa";
+import ProjectSection from "@/components/projectsection";
 // ProfileCard inlined to avoid module resolution issues during build
 function IconBtn({ href, label, icon }: { href: string; label: string; icon: string }) {
   return (
@@ -260,7 +261,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="skills" className="py-12 sm:py-16 md:py-20">
+        <section id="skills" className="py-8 sm:py-12 md:py-16">
           <motion.div 
             className="text-center mb-8 sm:mb-10 md:mb-12"
             initial={{ opacity: 0, y: 30 }}
@@ -512,275 +513,11 @@ export default function Home() {
           </motion.div>
 </section>
 
-        <section id="projects" className="py-12 sm:py-16 md:py-24">
-          <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <SectionHeading>Featured Projects</SectionHeading>
-            <p className="mt-2 sm:mt-3 text-sm sm:text-base text-theme-secondary max-w-3xl mx-auto">
-              A comprehensive showcase of my recent work spanning full-stack development, AI/ML applications, and innovative web solutions. Each project demonstrates technical expertise and creative problem-solving.
-            </p>
-          </div>
-
-          {/* Professional Timeline Layout */}
-          <motion.div 
-            className="relative"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            {/* Timeline Line - Hidden on mobile */}
-            <motion.div 
-              className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-emerald-500 via-purple-500 to-green-500 opacity-30"
-              initial={{ scaleY: 0 }}
-              animate={{ scaleY: 1 }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-            ></motion.div>
-            
-            <div className="space-y-6 sm:space-y-8">
-              {[
-                {
-                  title: "Nyagrik",
-                  description: "Legal consultation platform providing information and services for citizens with document templates.",
-                  tech: ["React", "Next.js", "MongoDB", "TailwindCSS", "API Integration", "TypeScript"],
-                  icon: "⚖️",
-                  link: "https://nyay-2-0.vercel.app/",
-                  category: "Frontend",
-                  year: "2023",
-                  status: "Completed",
-                  impact: "Legal Technology"
-                },
-                {
-                  title: "JALGENE",
-                  description: "AI-powered marine biodiversity research platform that processes environmental DNA data to identify and classify marine species.",
-                  tech: ["Next.js", "TypeScript", "React", "TailwindCSS", "Firebase", "API Integration", "AI-ML", "python", "AWS"],
-                  icon: "🌊",
-                  link: "https://deapsea-edna.vercel.app/",
-                  category: "Full Stack",
-                  year: "2024",
-                  status: "Active",
-                  impact: "Research Platform"
-                },
-                {
-                  title: "WasteFlow",
-                  description: "AI-powered waste management platform connecting waste producers with recyclers using smart matching algorithms.",
-                  tech: ["Next.js", "MongoDB", "OpenAI API", "TailwindCSS", "Firebase", "python", "Yolo V8", "Google Colab"],
-                  icon: "♻️",
-                  link: "https://waste-market-place.vercel.app/",
-                  category: "AI-ML",
-                  year: "2024",
-                  status: "Active",
-                  impact: "Environmental Impact"
-                },
-                {
-                  title: "LEXHAVEN",
-                  description: "Law internship portal for students to find internships and for companies to find interns.",
-                  tech: ["React", "Next.js", "MongoDB", "TailwindCSS", "TypeScript"],
-                  icon: "👨‍🎓",
-                  link: "https://law-interns-portal.vercel.app/",
-                  category: "Full Stack",
-                  year: "2024",
-                  status: "Active",
-                  impact: "Law Internship Portal"
-                },
-                {
-                  title: "StocKentra",
-                  description: "Smart stock market analysis platform with real-time trends and AI-powered insights for investors and traders.",
-                  tech: ["React", "Next.js", "MongoDB", "TailwindCSS", "API Integration"],
-                  icon: "📊",
-                  link: "https://stoc-kentra.vercel.app/",
-                  category: "Full Stack",
-                  year: "2024",
-                  status: "Active",
-                  impact: "Financial Technology"
-                },
-                {
-                  title: "TrendWise",
-                  description: "SEO-optimized blog platform with AI article generation and trending topic fetching capabilities.",
-                  tech: ["Next.js", "MongoDB", "OpenAI API", "TailwindCSS", "Firebase"],
-                  icon: "📈",
-                  link: "https://trendwise-three.vercel.app/",
-                  category: "Full Stack",
-                  year: "2024",
-                  status: "Active",
-                  impact: "Content Platform"
-                },
-                {
-                  title: "AI Tuition",
-                  description: "AI-powered personalized learning platform with ML-driven study path recommendations and progress tracking.",
-                  tech: ["Python", "Next.js", "Firebase", "TailwindCSS", "API Integration"],
-                  icon: "🤖",
-                  link: "https://ai-tuition.vercel.app/",
-                  category: "AI/ML",
-                  year: "2023",
-                  status: "Completed",
-                  impact: "Educational Technology"
-                },
-                {
-                  title: "3D Solar System",
-                  description: "Interactive 3D solar system simulation with realistic planetary motion and educational content.",
-                  tech: ["Three.js", "JavaScript", "HTML/CSS", "Texture Mapping"],
-                  icon: "🪐",
-                  link: "https://3-d-solar-system-simulation-chi.vercel.app/",
-                  category: "Frontend",
-                  year: "2023",
-                  status: "Completed",
-                  impact: "Educational Tool"
-                }
-              ].map((project, index) => (
-                <motion.div 
-                  key={index} 
-                  className={`relative flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ 
-                    duration: 0.4, 
-                    delay: index * 0.1,
-                    ease: "easeOut"
-                  }}
-                  viewport={{ once: true, margin: "-50px" }}
-                >
-                  {/* Timeline Node - Hidden on mobile */}
-                  <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-emerald-500 to-purple-500 rounded-full border-4 border-slate-900 z-10 shadow-lg shadow-emerald-500/25"></div>
-                  
-                  {/* Project Card */}
-                  <motion.div 
-                    className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ 
-                      duration: 0.4, 
-                      delay: index * 0.1,
-                      ease: "easeOut"
-                    }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    whileHover={{ 
-                      y: -5,
-                      scale: 1.01,
-                      transition: { duration: 0.2, ease: "easeOut" }
-                    }}
-                  >
-                    <div className="group relative bg-slate-800/90 backdrop-blur-xl rounded-2xl border border-slate-700/60 p-4 sm:p-6 hover:border-emerald-500/60 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/20">
-                      
-                      <div className="relative overflow-x-hidden">
-                        {/* Project Header */}
-                        <div className="flex items-start justify-between mb-3 sm:mb-4">
-                          <div className="flex items-center gap-2 sm:gap-3">
-                            <div className="text-2xl sm:text-3xl p-1.5 sm:p-2 bg-gradient-to-br from-slate-700/50 to-slate-800/50 rounded-xl border border-slate-600/50 group-hover:scale-110 transition-transform duration-200">
-                              {project.icon}
-                            </div>
-                            <div>
-                              <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-emerald-300 transition-colors mb-1 sm:mb-2">
-                                {project.title}
-                              </h3>
-                              <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
-                                <span className={`inline-block px-2 sm:px-3 py-0.5 sm:py-1 text-xs font-semibold rounded-full ${
-                                  project.category === 'Full Stack' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40' :
-                                  project.category === 'AI/ML' || project.category === 'AI-ML' ? 'bg-purple-500/20 text-purple-300 border border-purple-500/40' :
-                                  'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40'
-                                }`}>
-                                  {project.category}
-                                </span>
-                                <span className="text-xs text-gray-300 bg-slate-700/60 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md border border-slate-600/50 font-medium">
-                                  {project.year}
-                                </span>
-                                <span className={`text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md font-semibold ${
-                                  project.status === 'Active' ? 'bg-green-500/20 text-green-300 border border-green-500/40' : 'bg-gray-500/20 text-gray-300 border border-gray-500/40'
-                                }`}>
-                                  {project.status}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <a 
-                            href={project.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="opacity-70 hover:opacity-100 transition-all duration-200 p-2 hover:bg-slate-700/60 rounded-lg hover:scale-110"
-                          >
-                            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                          </a>
-                        </div>
-
-                        {/* Impact Badge */}
-                        <div className="mb-3 sm:mb-4">
-                          <span className="inline-block px-2 sm:px-3 py-0.5 sm:py-1 text-xs font-semibold bg-emerald-500/20 text-emerald-300 rounded-lg border border-emerald-500/40">
-                            💡 {project.impact}
-                          </span>
-                        </div>
-
-                        {/* Project Description */}
-                        <p className="text-xs sm:text-sm text-gray-200 leading-relaxed mb-3 sm:mb-4 font-medium">
-                          {project.description}
-                        </p>
-
-                        {/* Tech Stack */}
-                        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
-                          {project.tech.map((tech, techIndex) => (
-                            <span 
-                              key={techIndex} 
-                              className="px-2 sm:px-3 py-0.5 sm:py-1 text-xs bg-slate-700/60 text-gray-200 rounded-lg border border-slate-600/60 hover:bg-slate-600/60 hover:border-slate-500/60 transition-all duration-200 font-medium hover:scale-105"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-
-                        {/* Project Actions */}
-                        <div className="flex items-center justify-between">
-                          <a 
-                            href={project.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-emerald-600/30 border border-emerald-500/40 rounded-lg hover:bg-emerald-600/40 hover:border-emerald-500/60 transition-all duration-200 hover:scale-105"
-                          >
-                            <span>View Project</span>
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                          </a>
-                          <div className="text-xs text-gray-400 font-medium bg-slate-800/50 px-3 py-1 rounded-lg border border-slate-700/50">
-                            {project.tech.length} technologies
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* View More Projects */}
-          <motion.div 
-            className="text-center mt-20"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <div className="inline-flex flex-col items-center gap-4">
-              <div className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center border border-emerald-500/30 hover:scale-110 transition-transform duration-200">
-                <svg className="w-8 h-8 text-emerald-400" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-                </svg>
-              </div>
-              <a 
-                href="https://github.com/harshrana14-fi" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 text-base font-medium text-white bg-emerald-600/20 border border-emerald-500/30 rounded-xl hover:bg-emerald-600/30 hover:border-emerald-500/50 transition-all duration-200 hover:scale-105"
-              >
-                <span>Explore More Projects on GitHub</span>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
-          </motion.div>
+        <section id="projects" className="py-8 sm:py-12 md:py-16">
+          <ProjectSection />
         </section>
 
-        <section id="certs" className="py-24">
+        <section id="certs" className="py-8 sm:py-12 md:py-16">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -966,14 +703,14 @@ export default function Home() {
                 <div className="text-sm sm:text-base font-semibold">Follow Me</div>
                 <div className="mt-3 sm:mt-4 grid grid-cols-2 gap-2 sm:gap-3">
                   <a 
-                    href="https://github.com/" 
+                    href="https://github.com/harshrana14-fi" 
                     target="_blank" 
                     className="flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/5 py-2 transition-all duration-200 hover:scale-[1.02] hover:border-white/20 hover:bg-white/10 hover:shadow-[0_0_0_3px_rgba(255,255,255,0.06),0_12px_28px_rgba(255,255,255,0.08)]"
                   >
                     GitHub
                   </a>
                   <a 
-                    href="https://www.linkedin.com/" 
+                    href="https://www.linkedin.com/in/harsh-rana-13-fi/" 
                     target="_blank" 
                     className="flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/5 py-2 transition-all duration-200 hover:scale-[1.02] hover:border-white/20 hover:bg-white/10 hover:shadow-[0_0_0_3px_rgba(255,255,255,0.06),0_12px_28px_rgba(255,255,255,0.08)]"
                   >
