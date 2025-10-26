@@ -96,8 +96,9 @@ export default function ProjectSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <SectionHeading>Featured Work</SectionHeading>
+          <SectionHeading>My Projects</SectionHeading>
           <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+            Here are some of the projects I've worked on. <br />
             Crafting innovative digital experiences through code, design, and creativity
           </p>
         </motion.div>
