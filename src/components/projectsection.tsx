@@ -18,7 +18,7 @@ export default function ProjectSection() {
       title: "WorkConnect",
       description: "An app for connecting labourers with employers and for finding jobs.",
       tech: ["React-Native", "EXPO", "Firebase", "Python"],
-      link: "https://3-d-solar-system-simulation-chi.vercel.app/",
+      link: "https://github.com/harshrana14-fi/WorkConnect-app",
       category: "Mobile App",
       featured: true,
       image: "/images/app.jpg"
