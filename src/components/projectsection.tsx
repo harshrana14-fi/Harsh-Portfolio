@@ -29,8 +29,6 @@ export default function ProjectSection() {
       tech: ["Next.js", "TypeScript", "Firebase", "AI-ML", "Python", "AWS"],
       link: "https://deapsea-edna.vercel.app/",
       category: "Full Stack",
-      
-      
       image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&auto=format&fit=crop"
     },
     
@@ -98,7 +96,7 @@ export default function ProjectSection() {
         >
           <SectionHeading>My Projects</SectionHeading>
           <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
-            Here are some of the projects I've worked on. <br />
+            Here are some of the projects I&apos;ve worked on. <br />
             Crafting innovative digital experiences through code, design, and creativity
           </p>
         </motion.div>
