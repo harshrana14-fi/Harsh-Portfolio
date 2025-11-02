@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function ResumePage() {
   // Put your actual PDF at public/resume.pdf
-  const pdfPath = "/resume.pdf";
+  const pdfPath = "/Harsh_Resume.pdf";
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
