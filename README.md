@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Harsh-Portfolio
 
-## Getting Started
 
-First, run the development server:
+[Portfolio](https://harsh-works.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+</div>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📖 About ME
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Hello! I'm Harsh, a passionate Full Stack Developer, App Developer, and AI/ML Enthusiast. I specialize in building both web and mobile applications, as well as integrating AI and Machine Learning solutions into real-world problems. I’m driven by the challenge of creating user-centric experiences and exploring innovative technologies.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+In this portfolio, you’ll find examples of my work, my skills, and my journey as a developer.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## 📞 Contact
+Feel free to get in touch with me:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   Email: [ranajiharsxx14@gmail.com](mailto:ranajiharsxx14@gmail.com)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+-   LinkedIn: [Harsh's LinkedIn](https://www.linkedin.com/in/harsh-rana-13-fi/)
 
-## Deploy on Vercel
+-   GitHub: [Harsh's GitHub](https://github.com/harshrana14-fi)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<div align="center">
+
+**✨Let's Connect!**
+
+*If you'd like to collaborate on a project, learn more about what I do, or just want to chat about tech, don't hesitate to reach out!*
+
+Made with ❤️ by Harsh ([harshrana14-fi](https://github.com/harshrana14-fi))
+
+</div>
