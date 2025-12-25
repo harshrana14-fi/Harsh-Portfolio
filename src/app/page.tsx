@@ -614,10 +614,10 @@ export default function Home() {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
-                  "/images/cert1.jpg",
+                  "/images/cert7.jpeg",
                   "/images/cert2.jpg", 
                   "/images/cert3.jpg",
-                  "/images/cert5.jpg"
+                  "/images/cert1.jpg"
                 ].map((imagePath, index) => (
                   <motion.div
                     key={imagePath}
