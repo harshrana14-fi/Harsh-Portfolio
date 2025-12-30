@@ -29,7 +29,7 @@ export default function ProjectSection() {
       tech: ["Next.js", "TypeScript", "Firebase", "AI-ML", "Python", "AWS"],
       link: "https://deapsea-edna.vercel.app/",
       category: "Full Stack",
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&auto=format&fit=crop"
+      image: "https://images-ctf.baslerweb.com/dg51pdwahxgw/l2E65iVFyhk3Uz00XptIy/b7107fb832030ab009b82fcc8646aa9d/sea-ai-from-camera-input-to-alerts-on-screen.webp?w=1200&fit=pad&bg=rgb:ffffff&q=80&fm=jpg"
     },
     
     {
@@ -39,7 +39,7 @@ export default function ProjectSection() {
       link: "https://waste-market-place.vercel.app/",
       category: "AI/ML",
       
-      image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&auto=format&fit=crop"
+      image: "/images/waste99.jpg"
     },
     {
       title: "LEXHAVEN",
@@ -60,7 +60,7 @@ export default function ProjectSection() {
       image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop"
     },
     {
-      title: "AI Tuition",
+      title: "EDUFOX",
       description: "AI-powered personalized learning platform with ML-driven study path recommendations.",
       tech: ["Python", "Next.js", "Firebase", "TailwindCSS", "API Integration"],
       link: "https://ai-tuition.vercel.app/",

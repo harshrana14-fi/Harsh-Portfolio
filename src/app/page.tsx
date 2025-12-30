@@ -25,7 +25,7 @@ function IconBtn({ href, label, icon }: { href: string; label: string; icon: str
     </a>
   );
 }
-
+ 
 function ProfileCard() {
   return (
     <aside className="relative mx-2 sm:mx-4 mt-4 sm:mt-6 mb-6 sm:mb-8 z-10 md:z-40 w-full max-w-[520px] md:max-w-none md:mt-0 md:mb-0 md:mx-0 md:fixed md:left-8 md:top-32 md:bottom-6 md:w-80">
