@@ -16,11 +16,11 @@ export default function ProjectSection() {
     },
     {
       title: "JARVIS",
-      description: "Government fund tracker for tracking the funds of the government and the projects that are being funded.",
+      description: "Your Advanced AI Assistant",
       tech: ["Next.js","TypeScript", "MongoDb","python", "TensorFlow", "NLP"],
       link: "https://jarvis-silk-six.vercel.app/",
       category: "Full Stack, AI-ML",
-      featured: true,
+      
      image: "https://www.codewithrandom.com/wp-content/uploads/2024/04/image-3-1024x606.png"
     },
     {
@@ -29,7 +29,7 @@ export default function ProjectSection() {
       tech: ["React-Native", "EXPO", "Firebase", "Python"],
       link: "https://github.com/harshrana14-fi/WorkConnect-app",
       category: "Mobile App",
-      
+      featured: true,
       image: "/images/app.jpg"
     },
     {
