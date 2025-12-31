@@ -15,12 +15,21 @@ export default function ProjectSection() {
       image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&auto=format&fit=crop"
     },
     {
+      title: "JARVIS",
+      description: "Government fund tracker for tracking the funds of the government and the projects that are being funded.",
+      tech: ["Next.js","TypeScript", "MongoDb","python", "TensorFlow", "NLP"],
+      link: "https://jarvis-silk-six.vercel.app/",
+      category: "Full Stack, AI-ML",
+      featured: true,
+     image: "https://www.codewithrandom.com/wp-content/uploads/2024/04/image-3-1024x606.png"
+    },
+    {
       title: "WorkConnect",
       description: "An app for connecting labourers with employers and for finding jobs.",
       tech: ["React-Native", "EXPO", "Firebase", "Python"],
       link: "https://github.com/harshrana14-fi/WorkConnect-app",
       category: "Mobile App",
-      featured: true,
+      
       image: "/images/app.jpg"
     },
     {
@@ -68,15 +77,7 @@ export default function ProjectSection() {
      
       image: "/images/aitut.jpeg"
     },
-    {
-      title: "Govt Fund Tracker",
-      description: "Government fund tracker for tracking the funds of the government and the projects that are being funded.",
-      tech: ["Next.js","TypeScript", "MongoDb","API Integration"],
-      link: "https://govt-fund-tracker.vercel.app/",
-      category: "Full Stack",
     
-     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop"
-    },
     
   ];
 
