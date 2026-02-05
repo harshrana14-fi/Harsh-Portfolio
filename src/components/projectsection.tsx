@@ -10,9 +10,16 @@ export default function ProjectSection() {
       tech: ["React", "Next.js", "MongoDB", "TailwindCSS", "TypeScript"],
       link: "https://www.nyagrik.com/",
       category: "Full Stack",
-      
       featured: true,
       image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&auto=format&fit=crop"
+    },
+    {
+      title: "StylCop",
+      description: "A fashion-tech web project featuring a custom landing page and an AI-powered lead magnet(an AI model that scrapes fashion product data and generates daily outfit suggestions)",
+      tech: ["Next.js", "TypeScript", "MongoDb", "AI-ML", "Python"],
+      link: "https://www.stylcop.com/",
+      category: "Full Stack, AI-ML",
+      image: "/images/styl.png"
     },
     {
       title: "JARVIS",
@@ -40,7 +47,6 @@ export default function ProjectSection() {
       category: "Full Stack",
       image: "https://images-ctf.baslerweb.com/dg51pdwahxgw/l2E65iVFyhk3Uz00XptIy/b7107fb832030ab009b82fcc8646aa9d/sea-ai-from-camera-input-to-alerts-on-screen.webp?w=1200&fit=pad&bg=rgb:ffffff&q=80&fm=jpg"
     },
-    
     {
       title: "WasteFlow",
       description: "AI-powered waste management platform connecting producers with recyclers using smart matching algorithms.",
@@ -197,7 +203,7 @@ export default function ProjectSection() {
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
                   

@@ -11,7 +11,7 @@ export default function ResumePage() {
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-      <div className="container mx-auto max-w-6xl px-6 py-6">
+      <div className="container mx-auto max-w-6xl px-6 py-6">ul
         <div className="mb-4 flex items-center justify-between">
           <h1 className="text-2xl font-semibold">Resume</h1>
           <div className="flex items-center gap-2">
