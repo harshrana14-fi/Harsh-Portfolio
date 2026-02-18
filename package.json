@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/three": "^0.180.0",
+    "@vercel/analytics": "^1.6.1",
     "framer-motion": "^12.23.24",
     "lucide": "^0.548.0",
     "lucide-react": "^0.548.0",
