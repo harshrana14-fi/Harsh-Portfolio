@@ -27,7 +27,7 @@ export default function Footer() {
         className="font-mono footer-copyright"
         style={{ fontSize: 9, letterSpacing: 3, textTransform: "uppercase", color: "var(--muted)" }}
       >
-        © 2025 Harsh Jatoliya · Delhi, India · MAIT B.Tech IT
+        © 2026 Harsh Jatoliya · Delhi, India · MAIT B.Tech IT
       </div>
       <div className="footer-nav" style={{ display: "flex", gap: 16, alignItems: "center", position: "absolute", left: "50%", transform: "translateX(-50%)" }}>
         {navLinks.map(({ href, label, icon: Icon }) => (
