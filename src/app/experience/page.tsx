@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Masthead from "@/components/navbar";
 import BookCallButton from "@/components/BookCallButton";
+import Footer from "@/components/Footer";
 
 const experiences = [
   {
@@ -20,7 +21,7 @@ const experiences = [
     title: "Tech Lead",
     company: "StylCop",
     period: "Feb 2026 – Present",
-    tag: "AI Fashion",
+    tag: "Startup",
     points: [
       "Built StylCop, an AI-powered fashion platform for personalized outfit suggestions.",
       "Developed the landing page and currently working on the mobile app and social fashion features.",
@@ -30,7 +31,7 @@ const experiences = [
     title: "Developer",
     company: "CampusMart",
     period: "Aug 2025 – Oct 2025",
-    tag: "Marketplace",
+    tag: "Startup",
     points: [
       "Developed assignment-related features on CampusMart to support students more efficiently.",
       "Contributed to expanding the platform's reach and improving backend reliability.",
@@ -144,26 +145,26 @@ export default function ExperiencePage() {
         >
           <div
             className="font-mono"
-            style={{
-              fontSize: 9,
-              letterSpacing: 4,
-              textTransform: "uppercase",
-              color: "var(--muted)",
-              marginBottom: 6,
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-            }}
-          >
-            <span
               style={{
-                display: "block",
-                width: 24,
-                height: 1,
-                background: "var(--muted)",
+                fontSize: 10,
+                letterSpacing: 4,
+                textTransform: "uppercase",
+                color: "var(--muted)",
+                marginBottom: 6,
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
               }}
-            />
-            Building, learning, growing
+            >
+              <span
+                style={{
+                  display: "block",
+                  width: 24,
+                  height: 1,
+                  background: "var(--muted)",
+                }}
+              />
+              Building, learning, growing
           </div>
           <h1
             className="font-serif"
@@ -256,7 +257,7 @@ export default function ExperiencePage() {
                   <div
                     className="font-mono"
                     style={{
-                      fontSize: 11,
+                      fontSize: 12,
                       color: "var(--muted)",
                       letterSpacing: 1,
                       marginBottom: 10,
@@ -268,8 +269,8 @@ export default function ExperiencePage() {
                   <ul
                     style={{
                       listStyle: "none",
-                      fontSize: 12,
-                      color: "#555",
+                      fontSize: 13,
+                      color: "var(--hero-bio)",
                       lineHeight: 1.8,
                     }}
                   >
@@ -279,7 +280,7 @@ export default function ExperiencePage() {
                         style={{ display: "flex", gap: 8, marginBottom: 4 }}
                       >
                         <span
-                          style={{ color: "var(--light)", flexShrink: 0 }}
+                          style={{ color: "var(--muted)", flexShrink: 0 }}
                         >
                           —
                         </span>
@@ -309,7 +310,7 @@ export default function ExperiencePage() {
             <div
               className="font-mono"
               style={{
-                fontSize: 9,
+                fontSize: 10,
                 letterSpacing: 4,
                 textTransform: "uppercase",
                 color: "var(--muted)",
@@ -417,7 +418,7 @@ export default function ExperiencePage() {
                   <div
                     className="font-mono"
                     style={{
-                      fontSize: 8,
+                      fontSize: 10,
                       letterSpacing: 3,
                       textTransform: "uppercase",
                       color: "var(--muted)",
@@ -432,35 +433,7 @@ export default function ExperiencePage() {
         </div>
       </div>
 
-      {/* ── FOOTER ── */}
-      <footer
-        style={{
-          borderTop: "2px solid var(--ink)",
-          padding: "10px 40px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          flexShrink: 0,
-        }}
-      >
-        <div
-          className="font-mono"
-          style={{
-            fontSize: 9,
-            letterSpacing: 3,
-            textTransform: "uppercase",
-            color: "var(--muted)",
-          }}
-        >
-          © 2025 Harsh Jatoliya · Delhi, India · MAIT B.Tech IT
-        </div>
-        <div
-          className="font-serif"
-          style={{ fontStyle: "italic", fontSize: 13, color: "var(--muted)" }}
-        >
-          {experiences.length} roles · {certifications.length} certs
-        </div>
-      </footer>
+      <Footer />
 
       <BookCallButton />
 

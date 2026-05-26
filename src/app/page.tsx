@@ -3,6 +3,7 @@
 import Link from "next/link";
 import BookCallButton from "@/components/BookCallButton";
 import Masthead from "@/components/navbar";
+import Footer from "@/components/Footer";
 import { experience } from "@/lib/data";
 
 export default function Home() {
@@ -151,11 +152,10 @@ export default function Home() {
                 Full Stack Developer + AI Builder
               </p>
 
-              <p style={{ fontSize: 13, color: "#555", lineHeight: 1.9, maxWidth: 480 }}>
-                Passionate about crafting intuitive, engaging, and scalable user experiences.
-                I build high-quality digital products that solve real problems — from sleek
-                frontends to scalable backends and LLM integrations. Currently in my 2nd year
-                of B.Tech in Information Technology at MAIT, Delhi.
+              <p style={{ fontSize: 14, color: "var(--hero-bio)", lineHeight: 1.7, maxWidth: 480 }}>
+                Passionate about crafting intuitive, scalable user experiences — building
+                high-quality digital products from sleek frontends to backends and LLM
+                integrations. 2nd year B.Tech IT at MAIT, Delhi.
               </p>
 
               <div style={{ display: "flex", gap: 10, marginTop: 18 }}>
@@ -204,43 +204,39 @@ export default function Home() {
               </div>
             </div>
 
-            {/* stats */}
+            {/* skills */}
             <div
               style={{
-                display: "flex",
                 borderTop: "1px solid var(--light)",
-                paddingTop: "1.6rem",
-                gap: 0,
+                paddingTop: "1.2rem",
               }}
             >
-              {[
-                { num: "+25", label: "Projects completed" },
-                { num: "+10", label: "Open source contribs" },
-                { num: "2+",  label: "Years building" },
-              ].map((s, i) => (
-                <div
-                  key={i}
-                  style={{
-                    flex: 1,
-                    paddingRight: i < 2 ? "1.6rem" : 0,
-                    marginRight: i < 2 ? "1.6rem" : 0,
-                    borderRight: i < 2 ? "1px solid var(--light)" : "none",
-                  }}
-                >
-                  <div
-                    className="font-serif"
-                    style={{ fontSize: "3rem", fontWeight: 900, letterSpacing: -2, lineHeight: 1 }}
-                  >
-                    {s.num}
-                  </div>
-                  <div
-                    className="font-mono"
-                    style={{ fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: "var(--muted)", marginTop: 4 }}
-                  >
-                    {s.label}
-                  </div>
-                </div>
-              ))}
+              <div
+                className="font-mono"
+                style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "var(--ink)", marginBottom: 12 }}
+              >
+                My Expertise
+              </div>
+              <div style={{ fontSize: 12, color: "var(--hero-bio)", lineHeight: 1.9 }}>
+                {[
+                  ["Languages", "Java, Python, C/C++, SQL (Postgres), JavaScript, TypeScript, HTML/CSS"],
+                  ["Frameworks", "React, Next.js, Node.js, FastAPI, React Native, Expo"],
+                  ["Tools", "Git, GitHub, Google Cloud Platform, Firebase, Postman"],
+                  ["Libraries", "pandas, NumPy, Matplotlib"],
+                  ["Databases", "MongoDB, Firestore, Supabase"],
+                ].map(([cat, items], i) => (
+                  <span key={i}>
+                    {i > 0 && <span style={{ margin: "0 4px" }}>{" · "}</span>}
+                    <span
+                      className="font-mono"
+                      style={{ fontSize: 10, letterSpacing: 1, color: "var(--muted)" }}
+                    >
+                      {cat}:
+                    </span>{" "}
+                    <span>{items}</span>
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -338,10 +334,10 @@ export default function Home() {
                   {e.company} &nbsp;·&nbsp; {e.period}
                 </div>
 
-                <ul style={{ listStyle: "none", fontSize: 12, color: "#555", lineHeight: 1.8 }}>
+                <ul style={{ listStyle: "none", fontSize: 13, color: "var(--hero-bio)", lineHeight: 1.8 }}>
                   {e.bullets.map((b, j) => (
                     <li key={j} style={{ display: "flex", gap: 8, marginBottom: 4 }}>
-                      <span style={{ color: "var(--light)", flexShrink: 0 }}>—</span>
+                      <span style={{ color: "var(--muted)", flexShrink: 0 }}>—</span>
                       {b}
                     </li>
                   ))}
@@ -352,27 +348,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ── FOOTER ── */}
-      <footer
-        style={{
-          borderTop: "2px solid var(--ink)",
-          padding: "10px 40px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          flexShrink: 0,
-        }}
-      >
-        <div
-          className="font-mono"
-          style={{ fontSize: 9, letterSpacing: 3, textTransform: "uppercase", color: "var(--muted)" }}
-        >
-          © 2025 Harsh Jatoliya · Delhi, India · MAIT B.Tech IT
-        </div>
-        <div className="font-serif" style={{ fontStyle: "italic", fontSize: 13, color: "var(--muted)" }}>
-          I design · code · deploy.
-        </div>
-      </footer>
+      <Footer />
 
       <BookCallButton />
     </main>

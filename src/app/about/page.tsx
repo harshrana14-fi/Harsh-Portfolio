@@ -109,16 +109,16 @@ export default function AboutPage() {
             </h3>
 
             <div className="rounded-xl p-6 space-y-4" style={{ backgroundColor: "var(--paper-dark)", border: "1px solid var(--light)" }}>
-              <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
+              <p className="text-sm sm:text-base text-neutral-500 leading-relaxed">
                 I work at the intersection of product thinking and engineering
                 execution, shaping interfaces and backend systems into one coherent
                 experience.
               </p>
-              <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
+              <p className="text-sm sm:text-base text-neutral-500 leading-relaxed">
                 My process is simple: frame the problem clearly, cut the noise, build
                 fast, and iterate with real user feedback until it feels inevitable.
               </p>
-              <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
+              <p className="text-sm sm:text-base text-neutral-500 leading-relaxed">
                 From early experiments to deployed platforms, I focus on reliability,
                 clarity, and momentum.
               </p>

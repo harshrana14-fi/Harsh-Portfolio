@@ -18,14 +18,14 @@ body {
   --ink: #111010;
   --paper: #f5f2eb;
   --paper-dark: #ede9e0;
-  --muted: #888;
+  --muted: #555;
   --light: #ccc;
   --border-light: #e5e1d8;
-  --hero-bio: #555;
-  --exp-bullet: #666;
+  --hero-bio: #333;
+  --exp-bullet: #444;
   --proj-number: #ddd9d0;
   --proj-tag-border: #d5d0c5;
-  --proj-tag-color: #555;
+  --proj-tag-color: #333;
   --proj-hover: #ede9e0;
   --cbtn-border: #111010;
   --cbtn-text: #111010;
@@ -33,13 +33,13 @@ body {
   --cbtn-primary-text: #f5f2eb;
   --badge-bg: #111010;
   --badge-text: #f5f2eb;
-  --ticker-color: #888;
+  --ticker-color: #555;
   --ticker-bold: #111010;
   --noise-opacity: 0.04;
   --nav-bg: rgba(245, 242, 235, 0.9);
   --nav-border: #ccc;
   --nav-text: #111010;
-  --nav-text-secondary: #888;
+  --nav-text-secondary: #555;
   --section-divider: #111010;
 
   /* Neutral palette (light mode - inverted for light bg) */
@@ -47,8 +47,8 @@ body {
   --n-100: #f5f5f5;
   --n-200: #2a2a2a;
   --n-300: #3a3a3a;
-  --n-400: #888;
-  --n-500: #666;
+  --n-400: #555;
+  --n-500: #444;
   --n-600: #525252;
   --n-700: #404040;
   --n-800: #e8e4db;
@@ -65,14 +65,14 @@ body {
   --ink: #ededed;
   --paper: #0b0b0b;
   --paper-dark: #111111;
-  --muted: #71717a;
+  --muted: #c5c5cd;
   --light: #1f1f1f;
   --border-light: #1f1f1f;
-  --hero-bio: #a1a1aa;
-  --exp-bullet: #a1a1aa;
+  --hero-bio: #d4d4d4;
+  --exp-bullet: #d4d4d4;
   --proj-number: #1a1a1a;
   --proj-tag-border: #333;
-  --proj-tag-color: #a1a1aa;
+  --proj-tag-color: #d4d4d4;
   --proj-hover: #111111;
   --cbtn-border: #ededed;
   --cbtn-text: #ededed;
@@ -80,13 +80,13 @@ body {
   --cbtn-primary-text: #0b0b0b;
   --badge-bg: #ededed;
   --badge-text: #0b0b0b;
-  --ticker-color: #71717a;
+  --ticker-color: #c5c5cd;
   --ticker-bold: #ededed;
   --noise-opacity: 0.06;
   --nav-bg: rgba(11, 11, 11, 0.9);
   --nav-border: #1f1f1f;
   --nav-text: #ededed;
-  --nav-text-secondary: #71717a;
+  --nav-text-secondary: #c5c5cd;
   --section-divider: #ededed;
 
   /* Neutral palette (dark mode - standard Tailwind-like) */
@@ -94,8 +94,8 @@ body {
   --n-100: #f5f5f5;
   --n-200: #e5e5e5;
   --n-300: #d4d4d4;
-  --n-400: #a3a3a3;
-  --n-500: #737373;
+  --n-400: #d4d4d4;
+  --n-500: #c5c5cd;
   --n-600: #525252;
   --n-700: #404040;
   --n-800: #262626;

@@ -16,7 +16,7 @@ export default function ContactPage() {
         >
           <p className="brutal-kicker">Communication Channel</p>
           <h1 className="brutal-title text-4xl sm:text-5xl md:text-6xl mt-2">Signal Room</h1>
-          <p className="mt-3 text-gray-500 max-w-3xl uppercase tracking-[0.05em] text-sm">
+          <p className="mt-3 text-neutral-500 max-w-3xl uppercase tracking-[0.05em] text-sm">
             Got a bold idea, a product to rebuild, or a prototype to launch? Drop a
             signal and let&apos;s shape it into something sharp.
           </p>
@@ -35,15 +35,15 @@ export default function ContactPage() {
 
           <div className="grid gap-4">
             <div className="border-3 border-white p-5">
-              <p className="text-xs uppercase tracking-[0.15em] text-gray-500">Email</p>
+              <p className="text-xs uppercase tracking-[0.15em] text-neutral-500">Email</p>
               <p className="text-sm font-bold mt-1">ranajiharsxx14@gmail.com</p>
             </div>
             <div className="border-3 border-white p-5">
-              <p className="text-xs uppercase tracking-[0.15em] text-gray-500">Location</p>
+              <p className="text-xs uppercase tracking-[0.15em] text-neutral-500">Location</p>
               <p className="text-sm font-bold mt-1">Delhi, New Delhi, India</p>
             </div>
             <div className="border-3 border-white p-5">
-              <p className="text-xs uppercase tracking-[0.15em] text-gray-500">Availability</p>
+              <p className="text-xs uppercase tracking-[0.15em] text-neutral-500">Availability</p>
               <p className="text-sm font-bold mt-1 uppercase">Open to opportunities</p>
             </div>
           </div>

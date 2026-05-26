@@ -9,6 +9,7 @@ import {
 } from "react-icons/si";
 import Masthead from "@/components/navbar";
 import BookCallButton from "@/components/BookCallButton";
+import Footer from "@/components/Footer";
 
 const techIconMap: Record<string, React.ElementType> = {
   "React": SiReact,
@@ -512,27 +513,7 @@ export default function ProjectsPage() {
         </div>
       </div>
 
-      {/* ── FOOTER ── */}
-      <footer
-        style={{
-          borderTop: "2px solid var(--ink)",
-          padding: "10px 40px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          flexShrink: 0,
-        }}
-      >
-        <div
-          className="font-mono"
-          style={{ fontSize: 9, letterSpacing: 3, textTransform: "uppercase", color: "var(--muted)" }}
-        >
-          © 2025 Harsh Jatoliya · Delhi, India · MAIT B.Tech IT
-        </div>
-        <div className="font-serif" style={{ fontStyle: "italic", fontSize: 13, color: "var(--muted)" }}>
-          {projects.length} projects shipped.
-        </div>
-      </footer>
+      <Footer />
 
       <BookCallButton />
     </main>
