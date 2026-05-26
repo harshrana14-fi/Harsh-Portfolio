@@ -213,13 +213,18 @@ export default function ProjectsPage() {
             linear-gradient(to bottom, var(--light) 1px, transparent 1px);
           background-size: 14px 14px;
         }
+
+        @media (max-width: 640px) {
+          .projects-content { padding: 0 16px !important; }
+          .projects-header-text { font-size: clamp(1.8rem, 8vw, 2.5rem) !important; }
+        }
       `}</style>
 
       <Masthead />
 
       {/* ── TICKER ── */}
       <div
-        className="anim-fadeDown-1"
+        className="anim-fadeDown-1 ticker-bar"
         style={{
           borderBottom: "1px solid var(--light)",
           padding: "8px 40px",
@@ -267,7 +272,7 @@ export default function ProjectsPage() {
 
       {/* ── CONTENT ── */}
       <div
-        className="anim-fadeUp-2"
+        className="anim-fadeUp-2 projects-content"
         style={{
           flex: 1,
           minHeight: 0,
@@ -306,7 +311,7 @@ export default function ProjectsPage() {
               A dossier of production-grade builds
             </div>
             <h1
-              className="font-serif"
+              className="font-serif projects-header-text"
               style={{
                 fontSize: "clamp(2.5rem, 4vw, 4rem)",
                 fontWeight: 900,

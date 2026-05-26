@@ -12,6 +12,7 @@ const navLinks = [
 export default function Footer() {
   return (
     <footer
+      className="footer"
       style={{
         borderTop: "2px solid var(--ink)",
         padding: "10px 40px",
@@ -23,12 +24,12 @@ export default function Footer() {
       }}
     >
       <div
-        className="font-mono"
+        className="font-mono footer-copyright"
         style={{ fontSize: 9, letterSpacing: 3, textTransform: "uppercase", color: "var(--muted)" }}
       >
         © 2025 Harsh Jatoliya · Delhi, India · MAIT B.Tech IT
       </div>
-      <div style={{ display: "flex", gap: 16, alignItems: "center", position: "absolute", left: "50%", transform: "translateX(-50%)" }}>
+      <div className="footer-nav" style={{ display: "flex", gap: 16, alignItems: "center", position: "absolute", left: "50%", transform: "translateX(-50%)" }}>
         {navLinks.map(({ href, label, icon: Icon }) => (
           <Link
             key={href}
@@ -73,12 +74,18 @@ export default function Footer() {
           </Link>
         ))}
       </div>
-      <div className="font-serif" style={{ fontStyle: "italic", fontSize: 13, color: "var(--muted)" }}>
+      <div className="font-serif footer-tagline" style={{ fontStyle: "italic", fontSize: 13, color: "var(--muted)" }}>
         I design · code · deploy.
       </div>
       <style>{`
         a:hover .tooltip-label {
           opacity: 1 !important;
+        }
+        @media (max-width: 640px) {
+          .footer { padding: 10px 16px !important; flex-direction: column !important; gap: 4px !important; }
+          .footer-nav { position: static !important; transform: none !important; }
+          .footer-tagline { display: none !important; }
+          .footer-copyright { font-size: 7px !important; letter-spacing: 1px !important; }
         }
       `}</style>
     </footer>

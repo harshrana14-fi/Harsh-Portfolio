@@ -13,6 +13,7 @@ export default function Masthead() {
 
   return (
     <header
+      className="masthead"
       style={{
         borderBottom: "3px solid var(--ink)",
         padding: "13px 40px 11px",
@@ -33,9 +34,9 @@ export default function Masthead() {
             .harsh <em style={{ fontStyle: "italic", fontWeight: 400 }}>codes</em>
           </div>
         </Link>
-        <div style={{ width: 1, height: 26, background: "var(--light)" }} />
+        <div className="masthead-divider" style={{ width: 1, height: 26, background: "var(--light)" }} />
         <div
-          className="font-mono"
+          className="font-mono masthead-subtitle"
           style={{ fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: "var(--muted)" }}
         >
           Full Stack + AI Developer
@@ -43,7 +44,7 @@ export default function Masthead() {
       </div>
 
       {/* center — social icons */}
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 14 }}>
+      <div className="masthead-social" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 14 }}>
         <a
           href="https://github.com/harshrana14-fi"
           target="_blank"
@@ -104,6 +105,7 @@ export default function Masthead() {
           href="https://mail.google.com/mail/?view=cm&fs=1&to=jatoliyaharsh8@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
+          className="masthead-dm-btn"
           style={{
             display: "flex",
             alignItems: "center",
@@ -132,6 +134,15 @@ export default function Masthead() {
           Shoot a DM ↗
         </a>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          .masthead { padding: 10px 16px !important; gap: 8px !important; grid-template-columns: 1fr auto !important; }
+          .masthead-subtitle, .masthead-divider { display: none !important; }
+          .masthead-dm-btn { padding: 4px 10px !important; font-size: 8px !important; letter-spacing: 1px !important; }
+          .masthead-social { gap: 6px !important; }
+          .masthead-social a svg { width: 15px; height: 15px; }
+        }
+      `}</style>
     </header>
   );
 }

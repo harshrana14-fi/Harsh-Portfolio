@@ -9,20 +9,20 @@ import { experience } from "@/lib/data";
 export default function Home() {
   return (
     <main
+      className="home-main"
       style={{
         height: "100dvh",
         display: "flex",
         flexDirection: "column",
         overflow: "hidden",
         background: "var(--paper)",
-        // REMOVED: maxWidth, margin auto, padding
       }}
     >
       <Masthead />
 
       {/* ── TICKER ── */}
       <div
-        className="anim-fadeDown-1"
+        className="anim-fadeDown-1 ticker-bar"
         style={{
           borderBottom: "1px solid var(--light)",
           padding: "8px 40px",
@@ -90,17 +90,18 @@ export default function Home() {
 
       {/* ── MAIN GRID ── */}
       <div
+        className="home-content"
         style={{
           flex: 1,
           display: "flex",
           flexDirection: "column",
           minHeight: 0,
-          padding: "0 40px",   // full-bleed sides, padding here
+          padding: "0 40px",
         }}
       >
         {/* hero row — two columns, fills remaining height */}
         <div
-          className="anim-fadeUp-2"
+          className="anim-fadeUp-2 hero-grid"
           style={{
             flex: 1,
             display: "grid",
@@ -111,6 +112,7 @@ export default function Home() {
         >
           {/* LEFT — name + bio + stats */}
           <div
+            className="hero-left"
             style={{
               padding: "2.4rem 2.4rem 2rem 0",
               display: "flex",
@@ -241,10 +243,11 @@ export default function Home() {
           </div>
 
           {/* col divider */}
-          <div style={{ background: "var(--light)", margin: "1.5rem 0" }} />
+          <div className="hero-divider" style={{ background: "var(--light)", margin: "1.5rem 0" }} />
 
           {/* RIGHT — experience & credentials only (matches image 2) */}
           <div
+            className="hero-right"
             style={{
               padding: "2.4rem 0 2rem 2.4rem",
               display: "flex",
@@ -351,6 +354,17 @@ export default function Home() {
       <Footer />
 
       <BookCallButton />
+
+      <style>{`
+        @media (max-width: 768px) {
+          .home-main { height: auto !important; min-height: 100dvh !important; overflow-y: auto !important; overflow-x: hidden !important; }
+          .home-content { padding: 0 16px !important; }
+          .hero-grid { grid-template-columns: 1fr !important; min-height: auto !important; border-bottom: none !important; }
+          .hero-divider { display: none !important; }
+          .hero-left { padding: 1.5rem 0 1rem 0 !important; }
+          .hero-right { padding: 0 0 1.5rem 0 !important; border-top: 1px solid var(--light); padding-top: 1.5rem !important; overflow-y: visible !important; }
+        }
+      `}</style>
     </main>
   );
 }

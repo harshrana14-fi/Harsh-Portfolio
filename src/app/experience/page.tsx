@@ -50,6 +50,7 @@ const certifications = [
 export default function ExperiencePage() {
   return (
     <main
+      className="exp-main"
       style={{
         height: "100dvh",
         display: "flex",
@@ -62,7 +63,7 @@ export default function ExperiencePage() {
 
       {/* ── TICKER ── */}
       <div
-        className="anim-fadeDown-1"
+        className="anim-fadeDown-1 ticker-bar"
         style={{
           borderBottom: "1px solid var(--light)",
           padding: "8px 40px",
@@ -125,7 +126,7 @@ export default function ExperiencePage() {
 
       {/* ── CONTENT ── */}
       <div
-        className="anim-fadeUp-2"
+        className="anim-fadeUp-2 exp-content"
         style={{
           flex: 1,
           minHeight: 0,
@@ -184,6 +185,7 @@ export default function ExperiencePage() {
 
         {/* Two-column content */}
         <div
+          className="exp-grid"
           style={{
             flex: 1,
             display: "grid",
@@ -194,13 +196,13 @@ export default function ExperiencePage() {
         >
           {/* LEFT — Experience */}
           <div
+            className="exp-left"
             style={{
               padding: "1.5rem 1.5rem 1.5rem 0",
               display: "flex",
               flexDirection: "column",
               gap: "1rem",
               overflowY: "auto",
-              /* smooth momentum scroll on iOS */
               WebkitOverflowScrolling: "touch",
               scrollBehavior: "smooth",
             }}
@@ -294,10 +296,11 @@ export default function ExperiencePage() {
           </div>
 
           {/* Divider */}
-          <div style={{ background: "var(--light)", margin: "1.5rem 0" }} />
+          <div className="exp-divider" style={{ background: "var(--light)", margin: "1.5rem 0" }} />
 
           {/* RIGHT — Certifications */}
           <div
+            className="exp-right"
             style={{
               padding: "1.5rem 0 1.5rem 1.5rem",
               display: "flex",
@@ -341,11 +344,12 @@ export default function ExperiencePage() {
               className="hide-scrollbar"
             >
               <div
+                className="cert-grid"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "1fr 1fr",
                   gap: "1rem",
-                  paddingBottom: "1rem", /* breathing room at bottom */
+                  paddingBottom: "1rem",
                 }}
               >
                 {certifications.map((cert, index) => (
@@ -439,9 +443,17 @@ export default function ExperiencePage() {
 
       {/* ── GLOBAL STYLE PATCH ── */}
       <style>{`
-        /* Hide scrollbar in Chrome / Safari / Opera */
         .hide-scrollbar::-webkit-scrollbar {
           display: none;
+        }
+        @media (max-width: 768px) {
+          .exp-main { height: auto !important; min-height: 100dvh !important; overflow-y: auto !important; overflow-x: hidden !important; }
+          .exp-content { padding: 0 16px !important; }
+          .exp-grid { grid-template-columns: 1fr !important; overflow: visible !important; }
+          .exp-divider { display: none !important; }
+          .exp-left { padding: 1rem 0 !important; overflow-y: visible !important; }
+          .exp-right { padding: 1rem 0 !important; overflow: visible !important; }
+          .cert-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </main>

@@ -207,3 +207,15 @@ body {
 .bg-theme-card { background-color: var(--paper-dark); border-color: var(--light); }
 .bg-theme-subtle { background-color: var(--paper-dark); }
 .border-theme { border-color: var(--light); }
+
+/* ── RESPONSIVE UTILITIES ── */
+@media (max-width: 768px) {
+  .ticker-bar {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+}

@@ -10,9 +10,9 @@ export default function ResumePage() {
   const pdfPath = "/Harsh'sResume.pdf";
 
   return (
-    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-      <div className="container mx-auto max-w-6xl px-6 py-6">ul
-        <div className="mb-4 flex items-center justify-between">
+    <div className="min-h-screen" style={{ backgroundColor: "var(--paper)", color: "var(--ink)" }}>
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 py-4 sm:py-6">
+        <div className="mb-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <h1 className="text-2xl font-semibold">Resume</h1>
           <div className="flex items-center gap-2">
             <a
