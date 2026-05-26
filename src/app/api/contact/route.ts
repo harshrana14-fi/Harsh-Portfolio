@@ -1,4 +1,5 @@
 import clientPromise from "@/lib/mongodb";
+import nodemailer from "nodemailer";
 export const runtime = "nodejs"; // ensure Node runtime for nodemailer
 export const dynamic = "force-dynamic";
 
@@ -41,7 +42,6 @@ export async function POST(request: Request) {
     let sent = false;
     if (SMTP_HOST && SMTP_PORT && SMTP_USER && SMTP_PASS) {
       try {
-        const nodemailer = await import("nodemailer");
         const transporter = nodemailer.createTransport({
           host: SMTP_HOST,
           port: Number(SMTP_PORT),
