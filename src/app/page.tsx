@@ -155,9 +155,7 @@ export default function Home() {
               </p>
 
               <p style={{ fontSize: 14, color: "var(--hero-bio)", lineHeight: 1.7, maxWidth: 480 }}>
-                Passionate about crafting intuitive, scalable user experiences — building
-                high-quality digital products from sleek frontends to backends and LLM
-                integrations. 2nd year B.Tech IT at MAIT, Delhi.
+                Started with curiosity, stayed for the craft. I build web products that are fast, functional, and thoughtfully designed — with AI baked in where it counts. 2nd year B.Tech IT at MAIT, Delhi.
               </p>
 
               <div style={{ display: "flex", gap: 10, marginTop: 18 }}>
