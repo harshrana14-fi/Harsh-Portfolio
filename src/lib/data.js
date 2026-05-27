@@ -10,6 +10,16 @@ export const experience = [
     ],
   },
   {
+      title: "Contributor",
+      company: "Elite Coders - Winter of Code 2026 (ECWoC 2026)",
+      period: "Jan 2026 – Feb 2026",
+      badge: "Open Source Contribution",
+    bullets: [
+      "Contributed to open-source projects during ECWOC and secured 33rd rank nationally among participants.",
+      "Collaborated on real-world development tasks, issue resolution, and feature improvements in a competitive environment.",
+    ],
+  },
+  {
     title: "Tech Lead",
     company: "StylCop",
     period: "Feb 2026 – Present",
@@ -17,16 +27,6 @@ export const experience = [
     bullets: [
       "Built StylCop, an AI-powered fashion platform for personalized outfit suggestions.",
       "Developed the landing page and currently working on the mobile app and social fashion features.",
-    ],
-  },
-  {
-    title: "Developer",
-    company: "CampusMart",
-    period: "Aug 2025 – Oct 2025",
-    badge: "Startup",
-    bullets: [
-      "Developed assignment-related features on CampusMart to support students more efficiently.",
-      "Contributed to expanding the platform's reach and improving backend reliability.",
     ],
   },
 ];

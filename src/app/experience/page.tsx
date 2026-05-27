@@ -28,6 +28,26 @@ const experiences = [
     ],
   },
   {
+    title: "Contributor",
+    company: "Open Source Connect Global 2026",
+    period: "Feb 2026",
+    tag: "Open Source Contribution",
+    points: [
+    "Participated as an open-source contributor in a global collaborative development program.",
+    "Contributed to project improvements, issue resolution, and feature development.",
+    ],
+  },
+  {
+    title: "Contributor",
+    company: "Elite Coders - Winter of Code 2026 (ECWoC 2026)",
+    period: "Jan 2026 – Feb 2026",
+    tag: "Open Source Contribution",
+    points: [
+    "Contributed to open-source projects during ECWOC and secured 33rd rank nationally among participants.",
+    "Collaborated on real-world development tasks, issue resolution, and feature improvements in a competitive environment.",
+    ],
+  },
+  {
     title: "Developer",
     company: "CampusMart",
     period: "Aug 2025 – Oct 2025",
@@ -41,9 +61,9 @@ const experiences = [
 
 const certifications = [
   { path: "/images/cert7.jpeg", title: "Certificate 1" },
-  { path: "/images/cert2.jpg", title: "Certificate 2" },
+  { path: "/images/cert1.jpg", title: "Certificate 2" },
   { path: "/images/cert3.jpg", title: "Certificate 3" },
-  { path: "/images/cert1.jpg", title: "Certificate 4" },
+  { path: "/images/cert2.jpg", title: "Certificate 4" },
   { path: "/images/cert4.jpg", title: "Certificate 5" },
 ];
 
