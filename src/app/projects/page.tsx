@@ -70,6 +70,19 @@ const projects = [
       statusColor: "bg-amber-500",
     },
     {
+      title: "StylMart",
+      description:
+        "A full-stack e-commerce platform built with Next.js,featuring a unique modern minimalist design with aesthetic visual appeal",
+      tech: ["MongoDB", "Next.js", "TailwindCSS"],
+      link: "https://stylmart-ecommplatform.onrender.com/",
+      github: "https://github.com/harshrana14-fi/Edufox",
+      category: "Full Stack",
+      image: "/images/mart.png",
+      badge: "E-commerce",
+      status: "Completed",
+      statusColor: "bg-emerald-500",
+    },
+    {
       title: "JARVIS",
       description:
         "Advanced AI Assistant using NLP and custom ML models to automate tasks and resolve prompts.",
@@ -136,19 +149,6 @@ const projects = [
       badge: "Finance",
       status: "All Systems Operational",
       statusColor: "bg-emerald-500",
-    },
-    {
-      title: "EDUFOX",
-      description:
-        "AI personalized learning platform with ML recommendations for personalized study paths.",
-      tech: ["Python", "Next.js", "Firebase", "TailwindCSS"],
-      link: "https://ai-tuition.vercel.app/",
-      github: "https://github.com/harshrana14-fi/Edufox",
-      category: "AI/ML",
-      image: "/images/aitut.jpeg",
-      badge: "EdTech",
-      status: "Building",
-      statusColor: "bg-amber-500",
     },
   ];
 
