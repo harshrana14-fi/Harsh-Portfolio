@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Cpu, Wrench, Puzzle, Terminal, Brain, Database} from "lucide-react";
 import {
   SiReact, SiNextdotjs, SiMongodb, SiTailwindcss, SiTypescript,
-  SiPython, SiTensorflow, SiFirebase, SiAmazonwebservices, SiOpenai,
-  SiExpo,
+  SiPython, SiTensorflow, SiFirebase, SiOpenai,
+  SiExpo, SiHtml5, SiCss, SiJavascript,
 } from "react-icons/si";
 import Masthead from "@/components/navbar";
 import BookCallButton from "@/components/BookCallButton";
@@ -23,11 +23,32 @@ const techIconMap: Record<string, React.ElementType> = {
   "React-Native": SiReact,
   "EXPO": SiExpo,
   "Firebase": SiFirebase,
-  "AWS": SiAmazonwebservices,
   "OpenAI": SiOpenai,
+  "Html5": SiHtml5,
+  "Css": SiCss,
+  "Javascript": SiJavascript,
+  "DevTool": Wrench,
+  "Plugin": Puzzle,
+  "CLI": Terminal,
+  "Groq": Cpu,
+  "RAG": Brain,
+  "ChromaDB": Database,
 };
 
 const projects = [
+    {
+      title: "Vybe",
+      description:
+        "It's a code scanning and security tool specifically targeting the workflow of vibe coders",
+      tech: ["DevTool", "Plugin", "CLI", "Groq", "TypeScript"],
+      link: "https://vybe-t1h3.vercel.app/",
+      github: "https://github.com/harshrana14-fi/Vybe-",
+      category: "Developer Tool",
+      image: "/images/vybe.png",
+      badge: "Project",
+      status: "Building",
+      statusColor: "bg-amber-500",
+    },
     {
       title: "Nyagrik",
       description:
@@ -52,31 +73,31 @@ const projects = [
       category: "Full Stack, AI-ML",
       image: "/images/studhub.png",
       badge: "Startup",
-      status: "Building",
-      statusColor: "bg-amber-500",
+      status: "Completed",
+      statusColor: "bg-emerald-500",
     },
     {
       title: "MedRag",
       description:
         "A RAG-based AI system that delivers accurate, natural language answers from complex health insurance policies with source citations.",
-      tech: ["React-Native", "EXPO", "Firebase", "Python"],
-      link: "https://medrag-six.vercel.app/",
+      tech: ["Next.js", "RAG", "ChromaDB", "Python"],
+      link: "https://medrag-henna.vercel.app/",
       github: "https://github.com/harshrana14-fi/MEDRAG",
-      category: "Full Stack, Rag Model",
+      category: "Rag Model",
       featured: true,
       image: "/images/medrag.png",
       badge: "Utility",
-      status: "Building",
-      statusColor: "bg-amber-500",
+      status: "Completed",
+      statusColor: "bg-emerald-500",
     },
     {
       title: "StylMart",
       description:
         "A full-stack e-commerce platform built with Next.js,featuring a unique modern minimalist design with aesthetic visual appeal",
-      tech: ["MongoDB", "Next.js", "TailwindCSS"],
+      tech: ["MongoDB", "Html5", "Css", "Javascript"],
       link: "https://stylmart-ecommplatform.onrender.com/",
-      github: "https://github.com/harshrana14-fi/Edufox",
-      category: "Full Stack",
+      github: "https://github.com/harshrana14-fi/StylMart--EcommPlatform",
+      category: "Web Dev",
       image: "/images/mart.png",
       badge: "E-commerce",
       status: "Completed",
@@ -100,7 +121,7 @@ const projects = [
       title: "JALGENE",
       description:
         "AI-powered marine biodiversity platform processing environmental DNA to identify marine species.",
-      tech: ["Next.js", "TypeScript", "Firebase", "AI-ML", "Python", "AWS"],
+      tech: ["Next.js", "TypeScript", "Firebase", "AI-ML", "Python"],
       link: "https://deapsea-edna.vercel.app/",
       github: "https://github.com/harshrana14-fi/jalgene",
       category: "Full Stack",
@@ -115,25 +136,12 @@ const projects = [
       description:
         "AI-powered waste management platform connecting producers with recyclers using smart matching.",
       tech: ["Next.js", "MongoDB", "OpenAI", "Python"],
-      link: "https://waste-market-place.vercel.app/",
-      github: "https://github.com/harshrana14-fi/WasteFlow",
+      link: "https://waste-flowipu.vercel.app/",
+      github: "https://github.com/harshrana14-fi/WasteFlowipu",
       category: "AI/ML",
-      image: "/images/waste99.jpg",
+      image: "/images/wast.png", 
       badge: "SaaS",
-      status: "C",
-      statusColor: "bg-amber-500",
-    },
-    {
-      title: "LEXHAVEN",
-      description:
-        "Law internship portal connecting law students with opportunities and law firms with talent.",
-      tech: ["React", "Next.js", "MongoDB", "TailwindCSS", "TypeScript"],
-      link: "https://law-interns-portal.vercel.app/",
-      github: "https://github.com/harshrana14-fi/LexHaven",
-      category: "Full Stack",
-      image: "/images/law.jpeg",
-      badge: "Portal",
-      status: "All Systems Operational",
+      status: "Completed",
       statusColor: "bg-emerald-500",
     },
     {
@@ -145,9 +153,9 @@ const projects = [
       github: "https://github.com/harshrana14-fi/StocKentra",
       category: "Full Stack",
       image:
-        "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop",
+        "/images/stock.png",
       badge: "Finance",
-      status: "All Systems Operational",
+      status: "Completed",
       statusColor: "bg-emerald-500",
     },
   ];
