@@ -15,7 +15,7 @@ In this portfolio, you’ll find examples of my work, my skills, and my journey 
 ## 📞 Contact
 Feel free to get in touch with me:
 
--   Email: [ranajiharsxx14@gmail.com](mailto:ranajiharsxx14@gmail.com)
+-   Email: [ranajiharsxx14@gmail.com](mailto:jatoliyaharsh8@gmail.com)
 
 -   LinkedIn: [Harsh's LinkedIn](https://www.linkedin.com/in/harsh-rana-13-fi/)
 
