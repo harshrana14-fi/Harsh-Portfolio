@@ -36,6 +36,20 @@ const techIconMap: Record<string, React.ElementType> = {
 };
 
 const projects = [
+     {
+      title: "MotionIt",
+      description:
+        "An advanced AI video generation platform that brings any image to life with realistic lip-synced talking videos.",
+      tech: ["Next.js", "TypeScript", "AI-ML", "Python", "Cloudinary", "MuseTalk", "chatterbox"],
+      link: "https://motion-it.vercel.app/",
+      github: "https://github.com/harshrana14-fi/MotionIt",
+      category: "Full Stack",
+      image:
+        "/images/it.png",
+      badge: "Project",
+      status: "Building",
+      statusColor: "bg-amber-500",
+     },
     {
       title: "Vybe",
       description:
@@ -46,8 +60,8 @@ const projects = [
       category: "Developer Tool",
       image: "/images/vybe.png",
       badge: "Project",
-      status: "Building",
-      statusColor: "bg-amber-500",
+      status: "Completed",
+      statusColor: "bg-emerald-500",
     },
     {
       title: "Nyagrik",
@@ -113,21 +127,6 @@ const projects = [
       category: "Full Stack, AI-ML",
       image: "/images/jarvis.png",
       badge: "AI Agent",
-      status: "Completed",
-      statusColor: "bg-emerald-500",
-    },
-    
-    {
-      title: "JALGENE",
-      description:
-        "AI-powered marine biodiversity platform processing environmental DNA to identify marine species.",
-      tech: ["Next.js", "TypeScript", "Firebase", "AI-ML", "Python"],
-      link: "https://deapsea-edna.vercel.app/",
-      github: "https://github.com/harshrana14-fi/jalgene",
-      category: "Full Stack",
-      image:
-        "https://images-ctf.baslerweb.com/dg51pdwahxgw/l2E65iVFyhk3Uz00XptIy/b7107fb832030ab009b82fcc8646aa9d/sea-ai-from-camera-input-to-alerts-on-screen.webp?w=1200&fit=pad&bg=rgb:ffffff&q=80&fm=jpg",
-      badge: "Research",
       status: "Completed",
       statusColor: "bg-emerald-500",
     },
