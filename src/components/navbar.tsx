@@ -1,148 +1,128 @@
 "use client";
 
 import Link from "next/link";
-import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Sun, Moon, Github, Linkedin } from "lucide-react";
+import { motion } from "framer-motion";
+import { Mail } from "lucide-react";
+
+const navLinks: { href: string; label: string; external?: boolean }[] = [
+  { href: "/projects", label: "Projects" },
+  { href: "/certifications", label: "Certifications" },
+];
+
+const DM_LINK = "https://mail.google.com/mail/u/0/?fs=1&to=jatoliyaharsh8@gmail.com&tf=cm";
 
 export default function Masthead() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header
-      className="masthead"
-      style={{
-        borderBottom: "3px solid var(--ink)",
-        padding: "13px 40px 11px",
-        display: "grid",
-        gridTemplateColumns: "1fr auto 1fr",
-        alignItems: "center",
-        gap: 20,
-        flexShrink: 0,
-      }}
-    >
-      {/* left */}
-      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-        <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
-          <div
-            className="font-serif"
-            style={{ fontSize: 21, fontWeight: 900, letterSpacing: -1, lineHeight: 1, cursor: "pointer" }}
-          >
-            .harsh <em style={{ fontStyle: "italic", fontWeight: 400 }}>codes</em>
-          </div>
-        </Link>
-        <div className="masthead-divider" style={{ width: 1, height: 26, background: "var(--light)" }} />
-        <div
-          className="font-mono masthead-subtitle"
-          style={{ fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: "var(--muted)" }}
+    <header className="fixed top-0 left-0 right-0 z-60 flex justify-center w-full pointer-events-none transition-all duration-300">
+      <div
+        className={`w-full transition-all duration-500 ease-in-out pointer-events-auto flex items-center justify-between
+          ${scrolled
+            ? "max-w-[48rem] mx-4 mt-4 rounded-full px-5 py-2.5 border border-neutral-200/80 bg-white/80 dark:border-neutral-800/80 dark:bg-neutral-900/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] backdrop-blur-sm"
+            : "max-w-4xl mx-auto px-6 sm:px-10 py-6 bg-transparent border-b-0"
+          }`}
+      >
+        {/* Logo / Avatar - Flex Centered */}
+        <Link
+          href="/"
+          className="flex items-center gap-2 group shrink-0 transition-opacity hover:opacity-75"
         >
-          Full Stack + AI Developer
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-800">
+            <img
+              src="/logo.jpg"
+              alt="Harsh Jatoliya"
+              className="h-full w-full object-cover"
+              onError={(e) => {
+                const el = e.currentTarget as HTMLImageElement;
+                el.style.display = "none";
+                const parent = el.parentElement;
+                if (parent) {
+                  parent.textContent = "H";
+                  parent.className = "flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-900 dark:bg-neutral-100 text-neutral-50 dark:text-neutral-950 font-serif text-sm font-bold";
+                }
+              }}
+            />
+          </div>
+          <span className="font-serif text-xl sm:text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 hidden sm:inline-block leading-none">
+            .harsh<em className="italic font-normal">codes</em>
+          </span>
+        </Link>
+
+        {/* Right side navigation & actions - Flex Centered in one row */}
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1">
+            {navLinks.map(({ href, label, external }) => {
+              if (external) {
+                return (
+                  <a
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3.5 py-1.5 text-sm font-medium text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors duration-200"
+                  >
+                    {label} ↗
+                  </a>
+                );
+              }
+
+              const active = isActive(href);
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  className={`relative inline-flex items-center px-2.5 py-1.5 text-sm font-medium transition-colors duration-200 ${active
+                      ? "text-neutral-950 dark:text-neutral-50"
+                      : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-200"
+                    }`}
+                >
+                  <span className="relative">
+                    {label}
+                    {active && (
+                      <motion.span
+                        layoutId="nav-underline"
+                        className="absolute -bottom-0.5 left-0 right-0 h-[1.5px] bg-current rounded-full"
+                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Vertical Separator Line */}
+          <div className="h-4 w-px bg-neutral-300 dark:bg-neutral-700 self-center" />
+
+          {/* Shoot a DM Button */}
+          <a
+            href={DM_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-neutral-800 bg-neutral-900 px-4 py-1.5 text-xs font-semibold text-neutral-50 transition-all duration-200 hover:bg-neutral-800 hover:scale-105 active:scale-95 dark:border-neutral-200 dark:bg-neutral-100 dark:text-neutral-950 dark:hover:bg-neutral-200"
+          >
+            <Mail size={12} className="align-middle" />
+            <span className="hidden sm:inline">Shoot a DM</span>
+            <span className="sm:hidden">DM</span>
+          </a>
         </div>
       </div>
-
-      {/* center — social icons */}
-      <div className="masthead-social" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 14 }}>
-        <a
-          href="https://github.com/harshrana14-fi"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: "var(--muted)", display: "flex", transition: "color 0.2s" }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--ink)")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
-          aria-label="GitHub"
-        >
-          <Github size={18} />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/harsh-rana-13-fi/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: "var(--muted)", display: "flex", transition: "color 0.2s" }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--ink)")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
-          aria-label="LinkedIn"
-        >
-          <Linkedin size={18} />
-        </a>
-        <a
-          href="https://x.com/rana972799"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: "var(--muted)", display: "flex", transition: "color 0.2s" }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--ink)")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
-          aria-label="X"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-          </svg>
-        </a>
-      </div>
-
-      {/* right */}
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 12 }}>
-        {mounted && (
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            style={{
-              width: 30, height: 30, borderRadius: "50%",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              background: "var(--ink)", color: "var(--paper)",
-              border: "none", cursor: "pointer",
-              transition: "transform 0.2s",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
-          </button>
-        )}
-        <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=jatoliyaharsh8@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="masthead-dm-btn"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 6,
-            background: "var(--ink)",
-            color: "var(--paper)",
-            fontFamily: "'DM Mono', monospace",
-            fontSize: 9,
-            letterSpacing: 2,
-            textTransform: "uppercase",
-            padding: "6px 14px",
-            border: "1px solid var(--ink)",
-            cursor: "pointer",
-            transition: "all 0.18s ease",
-            textDecoration: "none",
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "transparent";
-            (e.currentTarget as HTMLElement).style.color = "var(--ink)";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "var(--ink)";
-            (e.currentTarget as HTMLElement).style.color = "var(--paper)";
-          }}
-        >
-          Shoot a DM ↗
-        </a>
-      </div>
-      <style>{`
-        @media (max-width: 768px) {
-          .masthead { padding: 10px 16px !important; gap: 8px !important; grid-template-columns: 1fr auto !important; }
-          .masthead-subtitle, .masthead-divider { display: none !important; }
-          .masthead-dm-btn { padding: 4px 10px !important; font-size: 8px !important; letter-spacing: 1px !important; }
-          .masthead-social { gap: 6px !important; }
-          .masthead-social a svg { width: 15px; height: 15px; }
-        }
-      `}</style>
     </header>
   );
 }

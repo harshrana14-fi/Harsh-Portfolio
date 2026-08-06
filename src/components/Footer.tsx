@@ -1,93 +1,46 @@
 "use client";
 
-import Link from "next/link";
-import { House, FolderKanban, BookOpen } from "lucide-react";
-
-const navLinks = [
-  { href: "/", label: "Home", icon: House },
-  { href: "/projects", label: "Projects", icon: FolderKanban },
-  { href: "/experience", label: "Experience", icon: BookOpen },
-];
+import { Github, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer
-      className="footer"
-      style={{
-        borderTop: "2px solid var(--ink)",
-        padding: "10px 40px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        position: "relative",
-        flexShrink: 0,
-      }}
-    >
-      <div
-        className="font-mono footer-copyright"
-        style={{ fontSize: 9, letterSpacing: 3, textTransform: "uppercase", color: "var(--muted)" }}
-      >
-        © 2026 Harsh Jatoliya · Delhi, India · MAIT B.Tech IT
-      </div>
-      <div className="footer-nav" style={{ display: "flex", gap: 16, alignItems: "center", position: "absolute", left: "50%", transform: "translateX(-50%)" }}>
-        {navLinks.map(({ href, label, icon: Icon }) => (
-          <Link
-            key={href}
-            href={href}
-            style={{
-              position: "relative",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "var(--muted)",
-              textDecoration: "none",
-              cursor: "pointer",
-              transition: "color 0.18s ease",
-            }}
-            onMouseEnter={(e) => { e.currentTarget.style.color = "var(--ink)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.color = "var(--muted)"; }}
+    <footer className="w-full border-t border-neutral-200/80 dark:border-neutral-800/80 py-5 px-6 sm:px-10">
+      <div className="flex items-center justify-between">
+        <span className="text-sm font-semibold text-neutral-600 dark:text-neutral-400">
+          @harshjatoliya
+        </span>
+        <div className="flex items-center gap-4">
+          <a
+            href="https://github.com/harshrana14-fi"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50"
           >
-            <Icon size={16} />
-            <span
-              style={{
-                position: "absolute",
-                bottom: "calc(100% + 6px)",
-                left: "50%",
-                transform: "translateX(-50%)",
-                fontSize: 8,
-                letterSpacing: 2,
-                textTransform: "uppercase",
-                fontFamily: "'DM Mono', monospace",
-                whiteSpace: "nowrap",
-                color: "var(--paper)",
-                background: "var(--ink)",
-                padding: "2px 8px",
-                borderRadius: 2,
-                opacity: 0,
-                pointerEvents: "none",
-                transition: "opacity 0.15s ease",
-              }}
-              className="tooltip-label"
-            >
-              {label}
-            </span>
-          </Link>
-        ))}
+            <Github size={17} />
+          </a>
+          <a
+            href="https://x.com/rana972799"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X"
+            className="text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/harsh-rana-13-fi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50"
+          >
+            <Linkedin size={17} />
+          </a>
+        </div>
       </div>
-      <div className="font-serif footer-tagline" style={{ fontStyle: "italic", fontSize: 13, color: "var(--muted)" }}>
-        I design · code · deploy.
-      </div>
-      <style>{`
-        a:hover .tooltip-label {
-          opacity: 1 !important;
-        }
-        @media (max-width: 640px) {
-          .footer { padding: 10px 16px !important; flex-direction: column !important; gap: 4px !important; }
-          .footer-nav { position: static !important; transform: none !important; }
-          .footer-tagline { display: none !important; }
-          .footer-copyright { font-size: 7px !important; letter-spacing: 1px !important; }
-        }
-      `}</style>
     </footer>
   );
 }
