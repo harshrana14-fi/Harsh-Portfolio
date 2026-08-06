@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 
@@ -13,13 +13,22 @@ const navLinks: { href: string; label: string; external?: boolean }[] = [
 
 const DM_LINK = "https://mail.google.com/mail/u/0/?fs=1&to=jatoliyaharsh8@gmail.com&tf=cm";
 
+// Smooth, slightly springy easing — no CSS class-swap layout thrash.
+const SPRING = { type: "spring", stiffness: 300, damping: 32, mass: 0.6 } as const;
+
 export default function Masthead() {
   const [scrolled, setScrolled] = useState(false);
+  const tickingRef = useRef(false);
   const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 40);
+      if (tickingRef.current) return;
+      tickingRef.current = true;
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 40);
+        tickingRef.current = false;
+      });
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -30,13 +39,39 @@ export default function Masthead() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-60 flex justify-center w-full pointer-events-none transition-all duration-300">
-      <div
-        className={`w-full transition-all duration-500 ease-in-out pointer-events-auto flex items-center justify-between
+    <header className="fixed top-0 left-0 right-0 z-60 flex justify-center w-full pointer-events-none">
+      <motion.div
+        initial={false}
+        animate={
+          scrolled
+            ? {
+                maxWidth: "48rem",
+                marginTop: 16,
+                paddingLeft: 20,
+                paddingRight: 20,
+                paddingTop: 10,
+                paddingBottom: 10,
+                borderRadius: 999,
+                boxShadow: "0 8px 30px rgb(0,0,0,0.08)",
+              }
+            : {
+                maxWidth: "56rem",
+                marginTop: 0,
+                paddingLeft: 40,
+                paddingRight: 40,
+                paddingTop: 24,
+                paddingBottom: 24,
+                borderRadius: 0,
+                boxShadow: "0 0 0 rgba(0,0,0,0)",
+              }
+        }
+        transition={SPRING}
+        className={`w-full mx-4 sm:mx-auto pointer-events-auto flex items-center justify-between border
           ${scrolled
-            ? "max-w-[48rem] mx-4 mt-4 rounded-full px-5 py-2.5 border border-neutral-200/80 bg-white/80 dark:border-neutral-800/80 dark:bg-neutral-900/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] backdrop-blur-sm"
-            : "max-w-4xl mx-auto px-6 sm:px-10 py-6 bg-transparent border-b-0"
+            ? "border-neutral-200/80 bg-white/80 dark:border-neutral-800/80 dark:bg-neutral-900/80 backdrop-blur-sm"
+            : "border-transparent bg-transparent"
           }`}
+        style={{ willChange: "max-width, padding, margin, border-radius" }}
       >
         {/* Logo / Avatar - Flex Centered */}
         <Link
@@ -122,7 +157,7 @@ export default function Masthead() {
             <span className="sm:hidden">DM</span>
           </a>
         </div>
-      </div>
+      </motion.div>
     </header>
   );
 }
